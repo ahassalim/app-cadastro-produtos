@@ -1,56 +1,109 @@
-# Welcome to your Expo app 👋
+# App Cadastro de Produtos
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Aplicação mobile desenvolvida em React Native com Expo, utilizando Firebase Authentication e Firebase Firestore para persistência remota de dados.
 
-## Get started
+## Objetivo do Projeto
 
-1. Install dependencies
+O objetivo da aplicação é permitir que usuários realizem cadastro, login e gerenciamento de informações por meio de operações de CRUD. Após a autenticação, o usuário consegue acessar seu perfil e uma tela de cadastro de produtos.
 
-   ```bash
-   npm install
-   ```
+## Funcionalidades
 
-2. Start the app
+* Tela de login de usuário.
+* Tela de cadastro de usuário.
+* Autenticação com email e senha usando Firebase Authentication.
+* Tela inicial exibida após autenticação.
+* Tela de perfil do usuário com CRUD:
 
-   ```bash
-   npx expo start
-   ```
+  * Criar perfil.
+  * Visualizar perfil.
+  * Atualizar perfil.
+  * Excluir perfil.
+* Tela de cadastro de produtos com CRUD:
 
-In the output, you'll find options to open the app in a
+  * Cadastrar produto.
+  * Listar produtos.
+  * Editar produto.
+  * Excluir produto.
+* Persistência remota dos dados usando Firebase Firestore.
+* Repositório versionado no GitHub.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Tecnologias Utilizadas
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+* React Native
+* Expo
+* JavaScript
+* Firebase Authentication
+* Firebase Firestore
+* React Native Paper
+* Git e GitHub
 
-## Get a fresh project
+## Estrutura dos Dados no Firebase
 
-When you're ready, run:
+A aplicação utiliza duas coleções principais no Firestore:
+
+### Coleção `perfis`
+
+Armazena os dados do perfil do usuário autenticado.
+
+Campos utilizados:
+
+* uid
+* email
+* nome
+* telefone
+* curso
+* cidade
+* atualizadoEm
+
+### Coleção `produtos`
+
+Armazena os produtos cadastrados pelo usuário autenticado.
+
+Campos utilizados:
+
+* uid
+* email
+* nome
+* categoria
+* preco
+* quantidade
+* descricao
+* criadoEm
+* atualizadoEm
+
+## Como Executar o Projeto
+
+Para executar o projeto, é necessário ter o Node.js instalado.
+
+Primeiro, instale as dependências:
 
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Depois, execute o projeto:
 
-### Other setup steps
+```bash
+npx expo start
+```
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+Para abrir no navegador, pressione a tecla:
 
-## Learn more
+```bash
+w
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+Também é possível abrir pelo celular usando o aplicativo Expo Go.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Firebase
 
-## Join the community
+O projeto utiliza Firebase para autenticação e armazenamento remoto dos dados.
 
-Join our community of developers creating universal apps.
+Serviços usados:
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+* Authentication com email e senha.
+* Firestore Database para salvar perfil e produtos.
+
+## Autor
+
+Angelo Henrique Assalim
